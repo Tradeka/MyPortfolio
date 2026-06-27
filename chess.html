@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# Chess</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="container">
+        <h2>C# Chess</h2>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+        </div>
+    </div>
+</nav>
+
+<!-- PROJECT HERO (IMAGES) -->
+<section class="section">
+    <div class="container">
+        <div class="project-gallery">
+            <img src="resources/images/chessgif1.gif" alt="Project screenshot">
+            <img src="resources/images/checkmate.png" alt="Project screenshot">
+            <img src="resources/images/chessgif2.gif" alt="Project screenshot">
+        </div>
+    </div>
+</section>
+
+<!-- PROJECT DETAILS -->
+<section class="section">
+    <div class="container">
+
+        <div class="card project-content">
+            <h2>About This Project</h2>
+                <p>
+                    This project is a simple chess game with local multiplayer and computer opponents. I used the WPF framework for its UI capabalities. The backend code is all C#, and includes a number of custom classes that define the rules and constraints of chess.
+                </p>
+                <p>
+                    The game also has a bonus project-within-a-project, which is a genetic algorithm. My genetic algorithm solves the Ladder Mate, a classic chess problem, in an average of around 200 generations. The "hard mode" ai is my attempt at recreating the widely used MiniMax algorithm, which is a staple in the best chess engines.
+                </p>
+                <p>
+                    Unfortunately, due to the constraints of my architecture, my MiniMax runs fairly slowly. The main problem is that I used 2D arrays to represent the board, which leads to a lot of O(n^2) nested for loops. The fastest chess engines use bitboards (64-bit integers) to represent the chess board. This is a much more efficient approach, but I am happy with my own results
+                    for my first attempt at a chess engine.
+                </p>
+                <p>
+                    The 2-player mode functions flawlessly and includes all of the standard chess rules; checkmate/stalemate detection, pawn promotion, castling, etc. I would like to try my hand at it again in the future using bitboards, and with a different technology that will allow the game to be deployed on other platforms apart from Windows. The value of this project is the experience I gained from it.
+                </p>
+        </div>
+
+        
+
+        <!-- TECH STACK -->
+        <h3 style="margin-top: 2rem;">Technologies Used</h3>
+        <div class="skills">
+            <span class="skill">C#</span>
+            <span class="skill">.NET</span>
+            <span class="skill">WPF</span>
+        </div>
+
+        <!-- DOWNLOAD / LINKS -->
+        <div class="project-links" style="margin-top: 2rem;">
+            <p><a href="resources/downloads/Chess.zip" class="nav-links" download>Download Project (Desktop Executable)</a></p>
+            <p><a href="https://github.com/Tradeka/Chess" class="nav-links">View Code on Github</a></p>
+            
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 Tristan Radeka</p>
+</footer>
+
+</body>
+</html>

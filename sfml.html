@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFML Game Engine</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="container">
+        <h2>SFML Game Engine</h2>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+        </div>
+    </div>
+</nav>
+
+<!-- PROJECT HERO (IMAGES) -->
+<section class="section">
+    <div class="container">
+        <div class="project-gallery">
+            <img src="resources/images/platformergif.gif" alt="Project screenshot">
+            <img src="resources/images/ponggif.gif" alt="Project screenshot">
+            <img src="resources/images/jumping.png" alt="Project screenshot">
+        </div>
+    </div>
+</section>
+
+<!-- PROJECT DETAILS -->
+<section class="section">
+    
+    <div class="container">
+
+        <div class="card project-content">
+
+            <h2>About this Project</h2>
+
+            <p>
+                The goal of this project is to learn more about how game engines work under the hood. I wanted to take a bare-bones framework and build the systems and tooling needed for a 2D game engine essentially from scratch.
+            </p>
+
+            <p>
+                SFML (Simple and Fast Multimedia Library) is the perfect candidate to do that. Its API gives you what you need to easily render graphics and play audio in a C++ application, but the rest is up to you.
+            </p>
+
+            <p>
+                So far, I have made Pong and a basic platformer prototype with my engine, trying to make it scalable and modular along the way.
+            </p>
+
+            <h3>Core Architecture</h3>
+
+            <p>
+                I started by creating an abstract GameObject class, which would be used for all objects rendered to the screen that can move and interact with other objects.
+            </p>
+
+            <p>
+                Another important feature was a state machine for game states (similar to Scenes in Unity or Levels in Unreal). I created the class GameState, which all custom states derive from.
+            </p>
+
+            <p>
+                GameStates handle the main game loop as well as rendering all objects. Along with the GameState class is a StateManager class which encapsulates a stack. The developer can push and pop states from this stack to switch "scenes" in their game.
+            </p>
+
+            <p>
+                This is essential for a game engine, because it allows developers to make custom states with differing logic and objects. My Pong game makes use of both of these systems. The ball and paddles are GameObjects, and I created a menu state and a main game state.
+            </p>
+
+            <h3>Animation & Tilemap Systems</h3>
+
+            <p>
+                The next feature I wanted to add to the engine was animated objects. I did this by creating a class for individual animations and a class that controls switching between animations.
+            </p>
+
+            <p>
+                Animations can be looping or not, and the frame rate can be controlled. It works by separating a sprite sheet into individual IntRects (SFML class) for each sprite, and switching between these sprites to animate an object.
+            </p>
+
+            <p>
+                The GameObject class can either have a static sprite or animations. The most recent feature I added to my engine is a Tilemap system.
+            </p>
+
+            <p>
+                Similarly to animations, the Tilemap class separates a sprite sheet into individual tiles, which can be arranged with a 2D vector. This is a quick and easy way to lay out and design levels for a game.
+            </p>
+
+            <p>
+                Tilemaps also contain another 2D vector for defining which tiles are "collidable", and a method for checking a GameObject for collision with these tiles. These two systems (animation and tilemap) are used in my platformer prototype.
+            </p>
+
+            <h3>Reflection</h3>
+
+            <p>
+                This project has been a great learning experience for me; it has taught me to think like an architect rather than just a programmer, and to write scalable and maintainable code. I was able to make use of my state and object classes to make two very different games in a short amount of time, which shows the flexibility of my systems.
+            </p>
+
+            <p>
+                I plan to continue adding features to the engine in my free time, and to develop more fleshed-out games with it.
+            </p>
+
+        </div>
+
+        <!-- TECH STACK -->
+        <h3 style="margin-top: 2rem;">Technologies Used</h3>
+        <div class="skills">
+            <span class="skill">C++</span>
+            <span class="skill">SFML</span>
+        </div>
+
+        <!-- DOWNLOAD / LINKS -->
+        <div class="project-links" style="margin-top: 2rem;">
+            <p><a href="resources/downloads/Platformer.zip" class="nav-links" download>Download Platformer (Desktop Executable)</a></p>
+            <p><a href="resources/downloads/Pong.zip" class="nav-links" download>Download Pong (Desktop Executable)</a></p>
+            <p><a href="https://github.com/Tradeka/SMFL-Engine" class="nav-links">View Code on Github</a></p>
+            
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 Tristan Radeka</p>
+</footer>
+
+</body>
+</html>
